@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For MyFriend🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles2.css"/>
+</head>
+<body>
+
+  <div id="cur"></div>
+  <canvas id="bgc"></canvas>
+  <canvas id="cvc"></canvas>
+  <canvas id="flower-canvas" style="position:fixed;inset:0;pointer-events:none;z-index:2;"></canvas>
+
+  <button id="music-btn" class="paused">
+    <span class="note" id="music-note">🎵</span>
+    <span id="music-label">Music</span>
+  </button>
+
+  <!-- ══ SCENE 1 — Surprise opener ══ -->
+  <div class="scene on" id="s1">
+    <div class="card">
+      <div class="pill a1">✦ a little something for you</div>
+
+      <div class="chars a2">
+        <!-- Bear (left) -->
+        <svg class="side flb" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+          <defs><filter id="wh1"><feMorphology in="SourceAlpha" operator="dilate" radius="2.5" result="e"/><feFlood flood-color="white" result="w"/><feComposite in="w" in2="e" operator="in" result="o"/><feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <g filter="url(#wh1)">
+            <circle cx="26" cy="27" r="12" fill="#C4956A"/><circle cx="74" cy="27" r="12" fill="#C4956A"/>
+            <circle cx="26" cy="27" r="7"  fill="#E8C49A"/><circle cx="74" cy="27" r="7"  fill="#E8C49A"/>
+            <circle cx="50" cy="50" r="30" fill="#C4956A"/>
+            <ellipse cx="50" cy="54" rx="21" ry="19" fill="#E8C49A"/>
+            <ellipse cx="40" cy="46" rx="5"  ry="6"  fill="#3D2010"/><ellipse cx="60" cy="46" rx="5"  ry="6"  fill="#3D2010"/>
+            <circle  cx="42" cy="44.5" r="2" fill="white"/><circle  cx="62" cy="44.5" r="2" fill="white"/>
+            <ellipse cx="36" cy="56" rx="6" ry="3.5" fill="#FFAABA" opacity=".45"/>
+            <ellipse cx="64" cy="56" rx="6" ry="3.5" fill="#FFAABA" opacity=".45"/>
+            <path d="M43 59 Q50 65 57 59" stroke="#7A4B35" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <ellipse cx="50" cy="90" rx="22" ry="18" fill="#C4956A"/>
+            <path d="M28 76 Q18 88 22 98"  stroke="#C4956A" stroke-width="11" fill="none" stroke-linecap="round"/>
+            <path d="M72 76 Q82 88 78 98"  stroke="#C4956A" stroke-width="11" fill="none" stroke-linecap="round"/>
+            <ellipse cx="22" cy="98" rx="6" ry="4.5" fill="#E8C49A"/><ellipse cx="78" cy="98" rx="6" ry="4.5" fill="#E8C49A"/>
+          </g>
+        </svg>
+
+        <!-- Panda (centre, holding gift) -->
+        <svg class="main fl" viewBox="0 0 120 138" xmlns="http://www.w3.org/2000/svg">
+          <defs><filter id="wh2"><feMorphology in="SourceAlpha" operator="dilate" radius="3" result="e"/><feFlood flood-color="white" result="w"/><feComposite in="w" in2="e" operator="in" result="o"/><feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <g filter="url(#wh2)">
+            <circle cx="28"  cy="28" r="16" fill="#2A2A2A"/><circle cx="92"  cy="28" r="16" fill="#2A2A2A"/>
+            <circle cx="60"  cy="54" r="36" fill="#F5F0EB"/>
+            <ellipse cx="44" cy="46" rx="13" ry="14" fill="#2A2A2A"/><ellipse cx="76" cy="46" rx="13" ry="14" fill="#2A2A2A"/>
+            <circle  cx="44" cy="46" r="8"  fill="white"/><circle  cx="76" cy="46" r="8"  fill="white"/>
+            <circle  cx="44" cy="47" r="5"  fill="#1A1A1A"/><circle  cx="76" cy="47" r="5"  fill="#1A1A1A"/>
+            <circle  cx="46" cy="45" r="2"  fill="white"/><circle  cx="78" cy="45" r="2"  fill="white"/>
+            <ellipse cx="60" cy="58" rx="6" ry="4"  fill="#2A2A2A"/>
+            <path d="M52 63 Q60 70 68 63" stroke="#2A2A2A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <ellipse cx="38" cy="64" rx="8" ry="5" fill="#FFAABA" opacity=".4"/>
+            <ellipse cx="82" cy="64" rx="8" ry="5" fill="#FFAABA" opacity=".4"/>
+            <ellipse cx="60" cy="108" rx="28" ry="24" fill="#F5F0EB"/>
+            <ellipse cx="60" cy="112" rx="17" ry="14" fill="#E8E0D6"/>
+            <path d="M32 97 Q20 112 28 122" stroke="#F5F0EB" stroke-width="13" fill="none" stroke-linecap="round"/>
+            <path d="M88 97 Q100 112 92 122" stroke="#F5F0EB" stroke-width="13" fill="none" stroke-linecap="round"/>
+            <rect x="42" y="116" width="36" height="22" rx="4" fill="#F26B83"/>
+            <rect x="42" y="116" width="36" height="7"  rx="3" fill="#D94F6A"/>
+            <rect x="58" y="116" width="4"  height="22"      fill="#D94F6A" opacity=".5"/>
+            <path d="M51 116 Q60 108 69 116" stroke="#D94F6A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="60" cy="116" r="3" fill="#D94F6A"/>
+          </g>
+        </svg>
+      </div>
+
+      <h2 class="display a3">I made something<br/><em>special for you</em></h2>
+      <p class="body-text a3">do you wanna see it? 🥺</p>
+
+      <div class="row a4">
+        <button class="btn btn-y" onclick="goTo('s3')">Yes, show me! 💖</button>
+        <button class="btn btn-n" id="nb1" onclick="hitNo('nb1','s1',event)">No 🙄</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 2 — Sad no ══ -->
+  <div class="scene" id="s2">
+    <div class="card">
+      <button class="btn-back" onclick="goTo('s1')">← back</button>
+      <div class="pill a1" style="background:#FFF3CD;color:#A06000">👀 really though?</div>
+      <div class="chars a2" style="justify-content:center">
+        <svg class="main sd" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
+          <defs><filter id="wh3"><feMorphology in="SourceAlpha" operator="dilate" radius="3" result="e"/><feFlood flood-color="white" result="w"/><feComposite in="w" in2="e" operator="in" result="o"/><feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <g filter="url(#wh3)">
+            <circle cx="28"  cy="26" r="16" fill="#2A2A2A"/><circle cx="92"  cy="26" r="16" fill="#2A2A2A"/>
+            <circle cx="60"  cy="54" r="36" fill="#F5F0EB"/>
+            <ellipse cx="44" cy="46" rx="13" ry="14" fill="#2A2A2A"/><ellipse cx="76" cy="46" rx="13" ry="14" fill="#2A2A2A"/>
+            <circle  cx="44" cy="46" r="8"  fill="white"/><circle  cx="76" cy="46" r="8"  fill="white"/>
+            <path d="M38 43 Q44 49 50 43" stroke="#1A1A1A" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M70 43 Q76 49 82 43" stroke="#1A1A1A" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle  cx="44" cy="47" r="4"   fill="#1A1A1A"/><circle  cx="76" cy="47" r="4"   fill="#1A1A1A"/>
+            <circle  cx="45.5" cy="46" r="1.5" fill="white"/><circle  cx="77.5" cy="46" r="1.5" fill="white"/>
+            <ellipse cx="60" cy="58" rx="6" ry="4" fill="#2A2A2A"/>
+            <path d="M52 66 Q60 60 68 66" stroke="#2A2A2A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <line x1="32" y1="40" x2="30" y2="55" stroke="#88CCFF" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+            <line x1="88" y1="40" x2="90" y2="55" stroke="#88CCFF" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+            <ellipse cx="60" cy="108" rx="28" ry="24" fill="#F5F0EB"/>
+            <path d="M32 97 Q20 112 28 122" stroke="#F5F0EB" stroke-width="13" fill="none" stroke-linecap="round"/>
+            <path d="M88 97 Q100 112 92 122" stroke="#F5F0EB" stroke-width="13" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+      <div class="bd1 a1">Happy Birthday</div>
+      <div class="bd2 a2">Friend ✨</div>
+      <div class="bd3 a3">I am your gift 🎁</div>
+      <div class="row a4" style="margin-top:20px">
+        <button class="btn btn-c" onclick="goTo('s4')">Continue 💌</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 3 — Birthday reveal ══ -->
+  <div class="scene" id="s3">
+    <div class="card">
+      <button class="btn-back" onclick="goTo('s1')">← back</button>
+      <div class="pill a1">🎂 today is your day</div>
+      <div class="chars a2" style="justify-content:center">
+        <svg class="main fl" viewBox="0 0 128 148" xmlns="http://www.w3.org/2000/svg">
+          <defs><filter id="wh5"><feMorphology in="SourceAlpha" operator="dilate" radius="3" result="e"/><feFlood flood-color="white" result="w"/><feComposite in="w" in2="e" operator="in" result="o"/><feMerge><feMergeNode in="o"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <g filter="url(#wh5)">
+            <circle cx="28"  cy="28" r="16" fill="#2A2A2A"/><circle cx="100" cy="28" r="16" fill="#2A2A2A"/>
+            <circle cx="64"  cy="56" r="38" fill="#F5F0EB"/>
+            <ellipse cx="48" cy="48" rx="14" ry="15" fill="#2A2A2A"/><ellipse cx="80" cy="48" rx="14" ry="15" fill="#2A2A2A"/>
+            <circle  cx="48" cy="48" r="9"  fill="white"/><circle  cx="80" cy="48" r="9"  fill="white"/>
+            <circle  cx="48" cy="49" r="6"  fill="#1A1A1A"/><circle  cx="80" cy="49" r="6"  fill="#1A1A1A"/>
+            <circle  cx="50" cy="47" r="2.5"fill="white"/> <circle  cx="82" cy="47" r="2.5"fill="white"/>
+            <ellipse cx="64" cy="62" rx="6" ry="4"  fill="#2A2A2A"/>
+            <path d="M54 68 Q64 76 74 68" stroke="#2A2A2A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <ellipse cx="40" cy="70" rx="9" ry="5"  fill="#FFAABA" opacity=".55"/>
+            <ellipse cx="88" cy="70" rx="9" ry="5"  fill="#FFAABA" opacity=".55"/>
+            <polygon points="64,6 48,34 80,34" fill="#7C4DFF"/>
+            <polygon points="64,6 56,22 72,22" fill="#FFD700"/>
+            <circle cx="64" cy="6" r="4.5" fill="#FFD700"/>
+            <circle cx="64" cy="6" r="2.5" fill="white"/>
+            <ellipse cx="64" cy="126" rx="30" ry="24" fill="#F5F0EB"/>
+            <ellipse cx="64" cy="130" rx="19" ry="15" fill="#E8E0D6"/>
+            <path d="M34 108 Q17 88 20 74"   stroke="#F5F0EB" stroke-width="14" fill="none" stroke-linecap="round"/>
+            <path d="M94 108 Q111 88 108 74"  stroke="#F5F0EB" stroke-width="14" fill="none" stroke-linecap="round"/>
+            <ellipse cx="20"  cy="72" rx="8" ry="6" fill="#E8E0D6"/>
+            <ellipse cx="108" cy="72" rx="8" ry="6" fill="#E8E0D6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="bd1 a1">Happy Birthday</div>
+      <div class="bd2 a2">Friend ✨</div>
+      <div class="bd3 a3">wishing you all the magic 🎂</div>
+      <div class="row a4" style="margin-top:20px">
+        <button class="btn btn-c" onclick="goTo('s4')">My wish for you 💌</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 4 — Wish ══ -->
+  <div class="scene" id="s4">
+    <div class="card">
+      <button class="btn-back" onclick="goTo('s3')">← back</button>
+      <div class="pill a1">💌 straight from my heart</div>
+      <h2 class="display a2" style="font-size:1.7rem;margin-bottom:14px">My Wish<br/><em>For You</em></h2>
+      <div class="wish-box a3">
+        <p class="wp strong" >Prathi okkariki okkate life untundi, Unna okka life lo kuda happy ga undakapothe…
+adi correct kadhu. </p>
+               <p class="wp strong">Life chala chinnadi, moments inka chinnavi. Enjoy the moments🌟  </p>
+        <p class="wp strong">Stay happy. Stay healthy. Stay you. 💙. Happy Birthday</p>
+      </div>
+      <div class="row a4">
+        <button class="btn btn-c" onclick="goTo('s5')">Aww, next 🥺</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 5 — I Miss You ══ -->
+  <div class="scene" id="s5">
+    <div class="card card-miss">
+      <button class="btn-back" onclick="goTo('s4')">← back</button>
+      <div class="pill a1">🫂 sending you this</div>
+
+      <!-- Friends photo on miss you page -->
+      <div class="miss-photo-wrap a2">
+        <div class="miss-photo-frame">
+          <img id="miss-photo" src="" alt="us" class="miss-photo-img"/>
+        </div>
+        <div class="miss-photo-caption">ekkada tappu chesanu? </div>
+      </div>
+
+      <div class="miss a3">I MISS YOUR FRIENDSHIP</div>
+      <p class="body-text a3" style="font-size:.88rem">A misunderstanding should not be stronger than our friendship. 🫂</p>
+
+      <div class="row a4">
+        <button class="btn btn-c" onclick="goTo('s6')">One last thing… 💫</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SCENE 6 — Will you be my BFF again? ══ -->
+  <div class="scene" id="s6">
+    <div class="card">
+      <button class="btn-back" onclick="goTo('s5')">← back</button>
+      <div class="pill a1">🌸 most important question</div>
+
+      <!-- Friends Again photo -->
+      <div class="ring a2" id="photoRing">
+        <div class="ring-inner" id="photoInner">
+          <img id="bff-photo" src="" alt="friends again"/>
+        </div>
+      </div>
+
+      <h2 class="display a3" style="font-size:1.5rem;margin-bottom:4px">
+        Will you be my<br/><em>best friend again?</em>
+      </h2>
+      <p class="body-text a3" style="font-size:.8rem;margin-bottom:0;opacity:.6">(there is only one correct answer 😌)</p>
+
+      <div class="row a4" style="margin-top:18px">
+        <button class="btn btn-bff" onclick="yesBFF(event)">Always 💖</button>
+        <button class="btn btn-n" id="nbf" onclick="hitNo('nbf','s6',event)">No 😒<span class="no-hint" id="nohint"></span></button>
+      </div>
+
+      <!-- Our photo appears after YES, with overlay -->
+      <div class="success" id="succ">
+        <div class="our-photo-wrap" id="ourPhotoWrap">
+          <img id="our-photo" src="" alt="us" class="our-photo-img"/>
+        </div>
+        <p class="succ-text">I knew it!! Best Friends forever and ever 🎉🫶</p>
+      </div>
+    </div>
+  </div>
+  <script src ="config.js"></script>
+  <script src="flowers.js"></script>
+  <script src="app2.js"></script>
+  
+</body>
+</html>
+
+
